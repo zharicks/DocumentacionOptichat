@@ -1,3 +1,4 @@
+# .github/workflows/deploy-docs.yml
 name: Build and Deploy Documentation
 
 on:
@@ -12,8 +13,10 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -32,8 +35,19 @@ jobs:
 
       - name: Create .nojekyll for gh-pages
         run: |
-          # Esto garantiza que gh-pages sirva carpetas _static, etc.
           touch documentation/_build/html/.nojekyll
+
+      - name: Fix absolute asset URLs to relative
+        run: |
+          find documentation/_build/html -type f -name '*.html' -exec \
+            sed -i 's|href="/_static|href="_static|g' {} \;
+          find documentation/_build/html -type f -name '*.html' -exec \
+            sed -i 's|src="/_static|src="_static|g' {} \;
+
+      - name: Overwrite index.html with docs.html
+        run: |
+          rm documentation/_build/html/index.html
+          mv documentation/_build/html/docs.html documentation/_build/html/index.html
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
@@ -41,4 +55,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: documentation/_build/html
-
