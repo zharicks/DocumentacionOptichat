@@ -4,34 +4,37 @@ on:
   push:
     branches: [ main ]
   workflow_dispatch:
-  
+
+permissions:
+  contents: write
+  pages: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      # 1. Saca el código
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0   # necesario para gh-pages
+          fetch-depth: 0
 
-      # 2. Prepara Python
       - name: Set up Python 3.x
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      # 3. Instala Jupyter Book y tema
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install jupyter-book sphinx-book-theme
 
-      # 4. Construye el sitio
       - name: Build Jupyter Book
         run: jupyter-book build documentation/
 
-      # 5. Despliega a la rama gh-pages
+      - name: Create .nojekyll for gh-pages
+        run: |
+          # Esto garantiza que gh-pages sirva carpetas _static, etc.
+          touch documentation/_build/html/.nojekyll
+
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
