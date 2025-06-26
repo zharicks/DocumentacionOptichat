@@ -1,0 +1,4 @@
+format: jb-book
+root: docs
+chapters:
+  - file: reco

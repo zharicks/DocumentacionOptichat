@@ -1,0 +1,9 @@
+title: "Documentación de Optichat"
+author: "Equipo de Tecnología de Optichat"
+logo: C:\Users\sofmo\Desktop\DOCUMENTACION OPTICHAT\documentation\OptichatLogo.png
+
+html_logo: C:\Users\sofmo\Desktop\DOCUMENTACION OPTICHAT\documentation\OptichatLogo.png
+
+theme:
+  name: sphinx-book-theme
+  logo_only: true

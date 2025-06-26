@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+
+# Node dependencies
+**/node_modules/
+dist/
+build/
+
+# Jupyter Book build
+documentation/_build/
+
+# Entornos
+venv/
+.env
+
+# Editor
+.vscode/
+
+# Evitar repos anidados
+react-app/optichat-redesign/
