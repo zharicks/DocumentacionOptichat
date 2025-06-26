@@ -7,3 +7,7 @@ html_logo: C:\Users\sofmo\Desktop\DOCUMENTACION OPTICHAT\documentation\OptichatL
 theme:
   name: sphinx-book-theme
   logo_only: true
+
+html:
+  use_relative_urls: true
+  baseurl: ""
