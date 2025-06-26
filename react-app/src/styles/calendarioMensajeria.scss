@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+.calendario-mensajeria-page {
+  font-family: "Inter", sans-serif;
+  color: #111827;
+  padding: 1rem;
+
+  .page-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
+
+  .big-calendar-container {
+    background-color: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+
+    .rbc-calendar {
+      font-family: "Inter", sans-serif;
+
+      .rbc-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        .rbc-btn-group button {
+          font-family: "Inter", sans-serif;
+          background-color: #f9fafb;
+          border: 1px solid #e5e7eb;
+          border-radius: 6px;
+          padding: 0.4rem 0.75rem;
+          font-size: 0.85rem;
+          cursor: pointer;
+          margin-right: 0.4rem;
+
+          &:hover {
+            background-color: #f3f4f6;
+          }
+        }
+
+        .rbc-toolbar-label {
+          font-size: 1rem;
+          font-weight: 600;
+        }
+      }
+
+      .rbc-event {
+        background-color: #3b82f6;
+        border-radius: 0.5rem;
+        padding: 2px 6px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: #fff;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  /* Modal popup */
+  .modal-backdrop {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    .modal-content {
+      background-color: #ffffff;
+      border-radius: 0.75rem;
+      width: 420px;
+      padding: 2rem;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      font-family: "Inter", sans-serif;
+
+      .modal-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: #111827;
+      }
+
+      .modal-subtitle {
+        font-size: 0.95rem;
+        color: #6b7280;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.35rem;
+        font-size: 0.85rem;
+        color: #374151;
+        font-weight: 500;
+      }
+
+      input[type="text"],
+      input[type="time"],
+      select {
+        width: 100%;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+        font-family: "Inter", sans-serif;
+        margin-bottom: 1.2rem;
+        background-color: #f9fafb;
+        transition: border 0.2s ease;
+
+        &:focus {
+          outline: none;
+          border-color: #3b82f6;
+          background-color: #fff;
+        }
+      }
+
+      h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 1rem 0 0.5rem;
+        color: #111827;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: #4b5563;
+        margin-bottom: 0.5rem;
+      }
+
+      .popup-buttons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.5rem;
+        margin-top: 1rem;
+
+        .btn-cancel,
+        .btn-confirm {
+          border: none;
+          border-radius: 0.5rem;
+          padding: 0.5rem 1rem;
+          font-size: 0.9rem;
+          font-weight: 500;
+          cursor: pointer;
+          font-family: "Inter", sans-serif;
+          transition: background-color 0.2s ease;
+        }
+
+        .btn-cancel {
+          background-color: #f3f4f6;
+          color: #374151;
+
+          &:hover {
+            background-color: #e5e7eb;
+          }
+        }
+
+        .btn-confirm {
+          background-color: #3b82f6;
+          color: #fff;
+
+          &:hover {
+            background-color: #2563eb;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+/* Contenedor global */
+.home-page {
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  color: #333;
+}
+
+/* Banner con imagen de fondo */
+.home-banner {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0.75rem;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem;
+
+  .banner-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+  .banner-subtitle {
+    font-size: 1rem;
+    color: #f3f3f3;
+  }
+}
+
+/* Tarjetas de resumen (3) */
+.home-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  .summary-card {
+    background-color: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 1.2rem;
+    text-align: center;
+
+    .card-title {
+      font-size: 0.95rem;
+      color: #6b7280;
+      margin-bottom: 0.25rem;
+    }
+    .card-value {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #111827;
+
+      &.next-send-date {
+        font-size: 1.2rem; /* más pequeño */
+      }
+    }
+  }
+}
+
+/* Sección "Últimas Campañas" */
+.last-campaigns-section {
+  margin-bottom: 2rem;
+
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #111827;
+  }
+
+  .mini-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+/* Card minimalista con 2 barras (Enviados/Leídos) */
+.mini-campaign-card {
+  flex: 1 1 280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  min-width: 250px;
+
+  .mini-campaign-info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+
+    .mini-campaign-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 0.25rem;
+    }
+    .mini-campaign-status {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #3b82f6; /* Azul para status */
+      margin-bottom: 0.25rem;
+    }
+    .mini-campaign-value {
+      font-size: 0.85rem;
+      color: #6b7280;
+      line-height: 1.2;
+    }
+  }
+
+  .mini-campaign-chart {
+    width: 80px;
+    height: 50px;
+  }
+}
+
+/* Calendario (react-big-calendar) */
+.home-calendar {
+  margin-bottom: 2rem;
+
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #111827;
+  }
+
+  .calendar-container {
+    background-color: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 1.2rem;
+
+    /* Personalizar la apariencia del calendario y sus botones */
+    .rbc-calendar {
+      border: none;
+      font-family: "Inter", sans-serif; /* aplica la misma fuente */
+
+      .rbc-toolbar {
+        button {
+          font-family: "Inter", sans-serif;
+          background: #f3f4f6;
+          border: none;
+          border-radius: 4px;
+          padding: 0.3rem 0.6rem;
+          margin: 0 0.2rem;
+          cursor: pointer;
+          font-size: 0.85rem;
+
+          &:hover {
+            background-color: #e2e8f0;
+          }
+        }
+      }
+
+      .rbc-event {
+        background-color: #3b82f6;
+        border-radius: 4px;
+        color: #fff;
+        padding: 2px 4px;
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
